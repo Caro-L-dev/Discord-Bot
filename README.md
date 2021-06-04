@@ -7,3 +7,4 @@
 <p>> $ node index.js</p>
 
 <p>Documentation: Discord.js</p>
+<p>Deploy on Heroku<p>
