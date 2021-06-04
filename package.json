@@ -1,0 +1,22 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "<p>Create a bot: Discord Developer Portal.</p>\r <p>Access to permissions: Discord Permissions Calculator.</p>\r <p>> $ Npm init  </p>\r <p>> $ Npm install discord.js</p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caro-L-dev/Discord-Bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caro-L-dev/Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/Caro-L-dev/Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
