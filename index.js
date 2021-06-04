@@ -12,13 +12,28 @@ client.once('ready', () => {
 });
 
 
-/*Guild represents a server on Discord */
+
 client.on('message', (message) => {
+
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
     if(message.content === `${prefix}ping`) {
         message.channel.send('Pong.');
     }
     else if (message.content === `${prefix}server`) {
-        message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.memberCount} `);
+        /*Guild represents a server on Discord */
+        message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.memberCount}`);
+    }
+    else if (message.content === `${prefix}avatar`) {
+       if (!message.mentions.users.size) {
+           return message.channel.send(`Ton avatar est : ${message.author.displayAvatarURL({format: 'jpg', 'png' })}`);
+       }
+
+       const avatarList = message.mentions.users.map(user => {
+           return `L'avatar de ${user.username} est ${user.displayAvatarURL({format: 'jpg', 'png' })}`;
+       });
+
+       message.channel.send(avatarList);
     }
 });
 
