@@ -17,20 +17,23 @@ client.on('message', (message) => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    if(message.content === `${prefix}ping`) {
+    const arguments = message.content.slice(prefix.length).split(/ +/);
+    const command = arguments.shift().toLocaleLowerCase();
+
+    if(command === `ping`) {
         message.channel.send('Pong.');
     }
-    else if (message.content === `${prefix}server`) {
+    else if (command === `server`) {
         /*Guild represents a server on Discord */
         message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.memberCount}`);
     }
-    else if (message.content === `${prefix}avatar`) {
+    else if (command === `avatar`) {
        if (!message.mentions.users.size) {
-           return message.channel.send(`Ton avatar est : ${message.author.displayAvatarURL({format: 'jpg', 'png' })}`);
+           return message.channel.send(`Ton avatar est : ${message.author.displayAvatarURL({format: 'jpg' })}`);
        }
 
        const avatarList = message.mentions.users.map(user => {
-           return `L'avatar de ${user.username} est ${user.displayAvatarURL({format: 'jpg', 'png' })}`;
+           return `L'avatar de ${user.username} est ${user.displayAvatarURL({format: 'jpg' })}`;
        });
 
        message.channel.send(avatarList);
