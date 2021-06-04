@@ -1,2 +1,6 @@
+.gitignore
 node_modules
 .env
+config.json
+
+process.env.DISCORD_TOKEN
