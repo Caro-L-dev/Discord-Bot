@@ -3,7 +3,6 @@
 <p>Create a bot: Discord Developer Portal.</p>
 <p>Access to permissions: Discord Permissions Calculator.</p>
 <p>> $ npm init  </p>
-<p>> $ npm install dotenv  </p>
 <p>> $ npm install discord.js</p>
 <p>> $ node index.js</p>
 
